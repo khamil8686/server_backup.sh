@@ -46,7 +46,7 @@ eval $cmd
 
 # Backup entire server to ${backup_full_path).tar.gz
 IFS= read -r -d '' cmd <<EOF
-tar --sparse --preserve-permissions --gzip --exclude-from=${path_to_exclude_file} --exclude-backups --verbose --index-file=${index_full_path} --create --file ${backup_full_path}.tar.gz / 2>&1
+tar --sparse --preserve-permissions --gzip --exclude-from=${path_to_exclude_file} --exclude-backups --verbose --index-file=${index_full_path} --create --file ${backup_full_path} / 2>&1
 EOF
 echo "Backing up entire server... $cmd" 2>&1
 eval $cmd
